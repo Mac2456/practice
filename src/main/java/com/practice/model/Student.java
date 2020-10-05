@@ -1,14 +1,23 @@
 package com.practice.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+
 public class Student {
 
-    private Integer student_Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer studentId;
 
-    private String student_Name;
+    private String studentName;
 
-    private String student_last;
+    private String studentLast;
 
-    private Integer student_age;
+    private Integer studentAge;
 
-    private Integer student_grade;
+    private Integer studentGrade;
 }
