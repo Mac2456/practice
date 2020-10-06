@@ -1,17 +1,24 @@
 package com.practice.model;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer studentId;
+    private Integer student_Id;
 
     private String studentName;
 
@@ -19,5 +26,16 @@ public class Student {
 
     private Integer studentAge;
 
-    private Integer studentGrade;
+    private double studentGrade;
+
+
+   /* public Student(Integer studentId, String studentName, String studentLast, Integer studentAge, double studentGrade) {
+        this.student_Id = studentId;
+        this.studentName = studentName;
+        this.studentLast = studentLast;
+        this.studentAge = studentAge;
+        this.studentGrade = studentGrade;
+    }*/
+
+
 }

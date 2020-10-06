@@ -17,4 +17,16 @@ public class StudentService {
         return studentrepo.findAll();
     }
 
+    public void addName(Student student) {
+        studentrepo.save(student);
+    }
+
+
+    public void updateName(Student student) {
+        studentrepo.save(student);
+    }
+
+    public void removeName(Integer id) {
+        studentrepo.deleteById(id);
+    }
 }
