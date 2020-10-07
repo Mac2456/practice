@@ -1,9 +1,11 @@
 package com.practice.controller;
 
+import com.practice.Exception.StudentNotFoundException;
 import com.practice.model.Student;
 import com.practice.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +17,17 @@ public class StudentController {
     @Autowired
     private StudentService studentservice;
 
+    Logger logger = LoggerFactory.getLogger(StudentController.class);
+
     @GetMapping(path = "/getall")
     public List<Student> getdata() {
+        logger.trace("Jay Swaminarayan");
         return studentservice.getall();
+    }
+
+    @GetMapping(path = "/findnamebyid/{id}")
+    public @ResponseBody Student findnamebyid(@PathVariable Integer id) throws StudentNotFoundException {
+        return studentservice.getById(id);
     }
 
 
