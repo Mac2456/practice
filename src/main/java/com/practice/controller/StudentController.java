@@ -19,7 +19,7 @@ public class StudentController {
 
     Logger logger = LoggerFactory.getLogger(StudentController.class);
 
-    @GetMapping(path = "/getall")
+    @GetMapping(path = "/getall") // to get all student details
     public List<Student> getdata() {
         logger.trace("Jay Swaminarayan");
         return studentservice.getall();
