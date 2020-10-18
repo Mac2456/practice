@@ -48,7 +48,10 @@ public class StudentController {
         return "Deleted " + id;
     }
 
-   
+   public static void getName(){
+	System.out.println("This is a test method.");
+    }
+
 
 
 }
